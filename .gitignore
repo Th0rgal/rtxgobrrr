@@ -2,3 +2,5 @@
 .vscode
 .vscode/*
 rtxgobrrr/config.toml
+rtxgobrrr/__pycache__
+rtxgobrrr/__pycache__/*
