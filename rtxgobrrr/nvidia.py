@@ -33,10 +33,11 @@ class NvidiaClient:
                 0
             ]  # ldlc is the only retailer
             stock = first_retailer["stock"]
-            if stock > 0:
-                await self.alerter.send_alert(f"STOCK DETECTED: {stock}")
+            url = first_retailer["directPurchaseLink"] if "directPurchaseLink" in first_retailer else "null"
+            if stock >= 0:
+                await self.alerter.send_alert(f"STOCK DETECTED: {stock}, url: {url}")
             if first_retailer["hasOffer"]:
-                await self.alerter.send_alert("OFFER DETECTED")
+                await self.alerter.send_alert(f"OFFER DETECTED, url: {url}")
 
     async def query_page(self):
         async with aiohttp.ClientSession() as session:
