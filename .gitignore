@@ -1,0 +1,4 @@
+*.session
+.vscode
+.vscode/*
+rtxgobrrr/config.toml

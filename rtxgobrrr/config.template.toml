@@ -1,0 +1,23 @@
+[client]
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36"
+
+    [client.nvidia]
+    enabled = true
+    delay = 0.5 # send a request every 0.5s
+    api_url = "https://api.nvidia.partners/edge/product/search?page=1&limit=9&locale=fr-fr&category=GPU&gpu=RTX%203060%20Ti&manufacturer=NVIDIA&manufacturer_filter=NVIDIA~1,ASUS~0,EVGA~1,GAINWARD~0,GIGABYTE~0,MSI~2,PNY~1,ZOTAC~2"
+    referer = "https://www.nvidia.com/"
+
+    [client.ldlc]
+    enabled = true
+    delay = 0.5 # send a request every 0.5s
+    url = "https://www.ldlc.com/fiche/PB99993060.html"
+    referer = "https://www.nvidia.com/"
+
+[alerters]
+    [alerters.telegram]
+    api_id = 1111111
+    api_hash = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    bot_token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx"
+    usernames = [
+        "example"
+    ]
