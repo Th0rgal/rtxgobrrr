@@ -18,7 +18,7 @@ async def main(loop):
         ldlc_client = LdlcClient(loop, config, alerter)
         loop.create_task(ldlc_client.start())
 
-    alerter.send_alert("RTXGOBRRR started successfully")
+    await alerter.send_alert("RTXGOBRRR started successfully")
 
 loop = asyncio.get_event_loop()
 loop.create_task(main(loop))
