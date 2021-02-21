@@ -1,12 +1,13 @@
 import asyncio
 import aiohttp
-
+import time
 
 class NvidiaClient:
     def __init__(self, loop, config, alerter):
         self.loop = loop
         self.config = config
         self.alerter = alerter
+        self.last_error = 0
         self.content = None
 
     async def start(self):
@@ -14,8 +15,10 @@ class NvidiaClient:
             try:
                 self.loop.create_task(self.check_page())
                 await asyncio.sleep(self.config.nvidia_delay)
-            except Exception:  # we must not stop
-                pass
+            except Exception as exception:  # we must not stop
+                if time.time()-self.last_error > 60: # to avoid spamming errors
+                    self.alerter.send_alert(f"An error occured: {exception}")
+                    self.last_error = time.time()
 
     async def check_page(self):
         output = await self.query_page()
