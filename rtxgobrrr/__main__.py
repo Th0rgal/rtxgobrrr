@@ -20,6 +20,7 @@ async def main(loop):
 
     await alerter.send_alert("RTXGOBRRR started successfully")
 
+
 loop = asyncio.get_event_loop()
 loop.create_task(main(loop))
 loop.run_forever()
