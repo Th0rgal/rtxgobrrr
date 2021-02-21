@@ -24,6 +24,7 @@ class TomlConfig(Config):
         self.user_agent = client["user_agent"]
 
         nvidia = client["nvidia"]
+        self.nvidia_link = nvidia["link"]
         self.nvidia_enabled = nvidia["enabled"]
         self.nvidia_delay = nvidia["delay"]
         self.nvidia_api_url = nvidia["api_url"]

@@ -26,8 +26,7 @@ class LdlcClient:
         if output:
             if self.content != output:
                 if self.content:
-                    await self.alerter.send_alert("a change has been detected")
-                else:
+                    await self.alerter.send_alert(f"a change has been detected on ldlc page: {self.config.ldlc_url}")
                     self.content = output
 
     async def query_page(self, session):

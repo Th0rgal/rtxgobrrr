@@ -28,8 +28,7 @@ class NvidiaClient:
             # api change detection
             if self.content != output:
                 if self.content:
-                    await self.alerter.send_alert("a change has been detected")
-                else:
+                    await self.alerter.send_alert(f"a change has been detected on the nvidia website: {self.config.nvidia_link}")
                     self.content = output
 
             # refill detection
