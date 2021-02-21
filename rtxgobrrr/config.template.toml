@@ -4,6 +4,7 @@
     [client.nvidia]
     enabled = true
     delay = 0.5 # send a request every 0.5s
+    link = "https://www.nvidia.com/fr-fr/shop/geforce/gpu/?page=1&limit=9&locale=fr-fr&category=GPU&gpu=RTX%203060%20Ti&manufacturer=NVIDIA&manufacturer_filter=NVIDIA~1,ASUS~0,EVGA~1,GAINWARD~0,GIGABYTE~0,MSI~2,PNY~1,ZOTAC~2"
     api_url = "https://api.nvidia.partners/edge/product/search?page=1&limit=9&locale=fr-fr&category=GPU&gpu=RTX%203060%20Ti&manufacturer=NVIDIA&manufacturer_filter=NVIDIA~1,ASUS~0,EVGA~1,GAINWARD~0,GIGABYTE~0,MSI~2,PNY~1,ZOTAC~2"
     referer = "https://www.nvidia.com/"
 
